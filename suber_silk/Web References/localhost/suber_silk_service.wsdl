@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="role" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertAdminResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="selectAdminResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateAdminResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteAdminResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sellectAllAdmin">
+        <s:complexType />
+      </s:element>
+      <s:element name="sellectAllAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellectAllAdminResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:insertAdmin" />
+  </wsdl:message>
+  <wsdl:message name="insertAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:insertAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="selectAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:selectAdmin" />
+  </wsdl:message>
+  <wsdl:message name="selectAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:selectAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:updateAdmin" />
+  </wsdl:message>
+  <wsdl:message name="updateAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:updateAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAdmin" />
+  </wsdl:message>
+  <wsdl:message name="deleteAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="sellectAllAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:sellectAllAdmin" />
+  </wsdl:message>
+  <wsdl:message name="sellectAllAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:sellectAllAdminResponse" />
+  </wsdl:message>
+  <wsdl:portType name="suber_silk_serviceSoap">
+    <wsdl:operation name="insertAdmin">
+      <wsdl:input message="tns:insertAdminSoapIn" />
+      <wsdl:output message="tns:insertAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAdmin">
+      <wsdl:input message="tns:selectAdminSoapIn" />
+      <wsdl:output message="tns:selectAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAdmin">
+      <wsdl:input message="tns:updateAdminSoapIn" />
+      <wsdl:output message="tns:updateAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAdmin">
+      <wsdl:input message="tns:deleteAdminSoapIn" />
+      <wsdl:output message="tns:deleteAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllAdmin">
+      <wsdl:input message="tns:sellectAllAdminSoapIn" />
+      <wsdl:output message="tns:sellectAllAdminSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="suber_silk_serviceSoap" type="tns:suber_silk_serviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertAdmin">
+      <soap:operation soapAction="http://tempuri.org/insertAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAdmin">
+      <soap:operation soapAction="http://tempuri.org/selectAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAdmin">
+      <soap:operation soapAction="http://tempuri.org/updateAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAdmin">
+      <soap:operation soapAction="http://tempuri.org/deleteAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllAdmin">
+      <soap:operation soapAction="http://tempuri.org/sellectAllAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="suber_silk_serviceSoap12" type="tns:suber_silk_serviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertAdmin">
+      <soap12:operation soapAction="http://tempuri.org/insertAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAdmin">
+      <soap12:operation soapAction="http://tempuri.org/selectAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAdmin">
+      <soap12:operation soapAction="http://tempuri.org/updateAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAdmin">
+      <soap12:operation soapAction="http://tempuri.org/deleteAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllAdmin">
+      <soap12:operation soapAction="http://tempuri.org/sellectAllAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="suber_silk_service">
+    <wsdl:port name="suber_silk_serviceSoap" binding="tns:suber_silk_serviceSoap">
+      <soap:address location="http://localhost:39440/suber_silk_service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="suber_silk_serviceSoap12" binding="tns:suber_silk_serviceSoap12">
+      <soap12:address location="http://localhost:39440/suber_silk_service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

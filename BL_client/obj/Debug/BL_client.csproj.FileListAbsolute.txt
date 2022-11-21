@@ -1,0 +1,9 @@
+C:\Users\Dream\source\repos\suber_silk\BL_client\bin\Debug\BL_client.dll
+C:\Users\Dream\source\repos\suber_silk\BL_client\bin\Debug\BL_client.pdb
+C:\Users\Dream\source\repos\suber_silk\BL_client\bin\Debug\DAL.dll
+C:\Users\Dream\source\repos\suber_silk\BL_client\bin\Debug\DAL.pdb
+C:\Users\Dream\source\repos\suber_silk\BL_client\obj\Debug\BL_client.csprojAssemblyReference.cache
+C:\Users\Dream\source\repos\suber_silk\BL_client\obj\Debug\BL_client.csproj.CoreCompileInputs.cache
+C:\Users\Dream\source\repos\suber_silk\BL_client\obj\Debug\BL_client.csproj.CopyComplete
+C:\Users\Dream\source\repos\suber_silk\BL_client\obj\Debug\BL_client.dll
+C:\Users\Dream\source\repos\suber_silk\BL_client\obj\Debug\BL_client.pdb

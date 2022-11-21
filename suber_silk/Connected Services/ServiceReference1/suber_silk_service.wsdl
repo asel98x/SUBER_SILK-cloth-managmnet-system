@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insertAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="role" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertAdminResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="selectAdminResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateAdminResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAdmin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteAdminResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sellectAllAdmin">
+        <s:complexType />
+      </s:element>
+      <s:element name="sellectAllAdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellectAllAdminResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="role" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mobile" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="birthday" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="age" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertClientResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="selectClientResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mobile" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nic" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="birthday" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="age" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateClientResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteClientResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sellectAllClient">
+        <s:complexType />
+      </s:element>
+      <s:element name="sellectAllClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellectAllClientResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_client_details">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_client_detailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_client_detailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertMaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="material" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertMaterialResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectMaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="selectMaterialResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateMaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="material" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="updateMaterialResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteMaterial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteMaterialResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sellectAllMaterial">
+        <s:complexType />
+      </s:element>
+      <s:element name="sellectAllMaterialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellectAllMaterialResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_all_materials">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_all_materialsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_all_materialsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="quantity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="insertStockResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="selectStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="selectStockResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="deleteStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="deleteStockResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insertAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:insertAdmin" />
+  </wsdl:message>
+  <wsdl:message name="insertAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:insertAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="selectAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:selectAdmin" />
+  </wsdl:message>
+  <wsdl:message name="selectAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:selectAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:updateAdmin" />
+  </wsdl:message>
+  <wsdl:message name="updateAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:updateAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteAdmin" />
+  </wsdl:message>
+  <wsdl:message name="deleteAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="sellectAllAdminSoapIn">
+    <wsdl:part name="parameters" element="tns:sellectAllAdmin" />
+  </wsdl:message>
+  <wsdl:message name="sellectAllAdminSoapOut">
+    <wsdl:part name="parameters" element="tns:sellectAllAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertClientSoapIn">
+    <wsdl:part name="parameters" element="tns:insertClient" />
+  </wsdl:message>
+  <wsdl:message name="insertClientSoapOut">
+    <wsdl:part name="parameters" element="tns:insertClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="selectClientSoapIn">
+    <wsdl:part name="parameters" element="tns:selectClient" />
+  </wsdl:message>
+  <wsdl:message name="selectClientSoapOut">
+    <wsdl:part name="parameters" element="tns:selectClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateClientSoapIn">
+    <wsdl:part name="parameters" element="tns:updateClient" />
+  </wsdl:message>
+  <wsdl:message name="updateClientSoapOut">
+    <wsdl:part name="parameters" element="tns:updateClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteClient" />
+  </wsdl:message>
+  <wsdl:message name="deleteClientSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="sellectAllClientSoapIn">
+    <wsdl:part name="parameters" element="tns:sellectAllClient" />
+  </wsdl:message>
+  <wsdl:message name="sellectAllClientSoapOut">
+    <wsdl:part name="parameters" element="tns:sellectAllClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_client_detailsSoapIn">
+    <wsdl:part name="parameters" element="tns:get_client_details" />
+  </wsdl:message>
+  <wsdl:message name="get_client_detailsSoapOut">
+    <wsdl:part name="parameters" element="tns:get_client_detailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:insertMaterial" />
+  </wsdl:message>
+  <wsdl:message name="insertMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:insertMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="selectMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:selectMaterial" />
+  </wsdl:message>
+  <wsdl:message name="selectMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:selectMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:updateMaterial" />
+  </wsdl:message>
+  <wsdl:message name="updateMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:updateMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteMaterial" />
+  </wsdl:message>
+  <wsdl:message name="deleteMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="sellectAllMaterialSoapIn">
+    <wsdl:part name="parameters" element="tns:sellectAllMaterial" />
+  </wsdl:message>
+  <wsdl:message name="sellectAllMaterialSoapOut">
+    <wsdl:part name="parameters" element="tns:sellectAllMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_all_materialsSoapIn">
+    <wsdl:part name="parameters" element="tns:get_all_materials" />
+  </wsdl:message>
+  <wsdl:message name="get_all_materialsSoapOut">
+    <wsdl:part name="parameters" element="tns:get_all_materialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertStockSoapIn">
+    <wsdl:part name="parameters" element="tns:insertStock" />
+  </wsdl:message>
+  <wsdl:message name="insertStockSoapOut">
+    <wsdl:part name="parameters" element="tns:insertStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="selectStockSoapIn">
+    <wsdl:part name="parameters" element="tns:selectStock" />
+  </wsdl:message>
+  <wsdl:message name="selectStockSoapOut">
+    <wsdl:part name="parameters" element="tns:selectStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteStockSoapIn">
+    <wsdl:part name="parameters" element="tns:deleteStock" />
+  </wsdl:message>
+  <wsdl:message name="deleteStockSoapOut">
+    <wsdl:part name="parameters" element="tns:deleteStockResponse" />
+  </wsdl:message>
+  <wsdl:portType name="suber_silk_serviceSoap">
+    <wsdl:operation name="insertAdmin">
+      <wsdl:input message="tns:insertAdminSoapIn" />
+      <wsdl:output message="tns:insertAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="selectAdmin">
+      <wsdl:input message="tns:selectAdminSoapIn" />
+      <wsdl:output message="tns:selectAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAdmin">
+      <wsdl:input message="tns:updateAdminSoapIn" />
+      <wsdl:output message="tns:updateAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteAdmin">
+      <wsdl:input message="tns:deleteAdminSoapIn" />
+      <wsdl:output message="tns:deleteAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllAdmin">
+      <wsdl:input message="tns:sellectAllAdminSoapIn" />
+      <wsdl:output message="tns:sellectAllAdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertClient">
+      <wsdl:input message="tns:insertClientSoapIn" />
+      <wsdl:output message="tns:insertClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="selectClient">
+      <wsdl:input message="tns:selectClientSoapIn" />
+      <wsdl:output message="tns:selectClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <wsdl:input message="tns:updateClientSoapIn" />
+      <wsdl:output message="tns:updateClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <wsdl:input message="tns:deleteClientSoapIn" />
+      <wsdl:output message="tns:deleteClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllClient">
+      <wsdl:input message="tns:sellectAllClientSoapIn" />
+      <wsdl:output message="tns:sellectAllClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_client_details">
+      <wsdl:input message="tns:get_client_detailsSoapIn" />
+      <wsdl:output message="tns:get_client_detailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertMaterial">
+      <wsdl:input message="tns:insertMaterialSoapIn" />
+      <wsdl:output message="tns:insertMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="selectMaterial">
+      <wsdl:input message="tns:selectMaterialSoapIn" />
+      <wsdl:output message="tns:selectMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateMaterial">
+      <wsdl:input message="tns:updateMaterialSoapIn" />
+      <wsdl:output message="tns:updateMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMaterial">
+      <wsdl:input message="tns:deleteMaterialSoapIn" />
+      <wsdl:output message="tns:deleteMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllMaterial">
+      <wsdl:input message="tns:sellectAllMaterialSoapIn" />
+      <wsdl:output message="tns:sellectAllMaterialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_all_materials">
+      <wsdl:input message="tns:get_all_materialsSoapIn" />
+      <wsdl:output message="tns:get_all_materialsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insertStock">
+      <wsdl:input message="tns:insertStockSoapIn" />
+      <wsdl:output message="tns:insertStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="selectStock">
+      <wsdl:input message="tns:selectStockSoapIn" />
+      <wsdl:output message="tns:selectStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteStock">
+      <wsdl:input message="tns:deleteStockSoapIn" />
+      <wsdl:output message="tns:deleteStockSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="suber_silk_serviceSoap" type="tns:suber_silk_serviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertAdmin">
+      <soap:operation soapAction="http://tempuri.org/insertAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAdmin">
+      <soap:operation soapAction="http://tempuri.org/selectAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAdmin">
+      <soap:operation soapAction="http://tempuri.org/updateAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAdmin">
+      <soap:operation soapAction="http://tempuri.org/deleteAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllAdmin">
+      <soap:operation soapAction="http://tempuri.org/sellectAllAdmin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertClient">
+      <soap:operation soapAction="http://tempuri.org/insertClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectClient">
+      <soap:operation soapAction="http://tempuri.org/selectClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <soap:operation soapAction="http://tempuri.org/updateClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <soap:operation soapAction="http://tempuri.org/deleteClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllClient">
+      <soap:operation soapAction="http://tempuri.org/sellectAllClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_client_details">
+      <soap:operation soapAction="http://tempuri.org/get_client_details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertMaterial">
+      <soap:operation soapAction="http://tempuri.org/insertMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectMaterial">
+      <soap:operation soapAction="http://tempuri.org/selectMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMaterial">
+      <soap:operation soapAction="http://tempuri.org/updateMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMaterial">
+      <soap:operation soapAction="http://tempuri.org/deleteMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllMaterial">
+      <soap:operation soapAction="http://tempuri.org/sellectAllMaterial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_all_materials">
+      <soap:operation soapAction="http://tempuri.org/get_all_materials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertStock">
+      <soap:operation soapAction="http://tempuri.org/insertStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectStock">
+      <soap:operation soapAction="http://tempuri.org/selectStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteStock">
+      <soap:operation soapAction="http://tempuri.org/deleteStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="suber_silk_serviceSoap12" type="tns:suber_silk_serviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertAdmin">
+      <soap12:operation soapAction="http://tempuri.org/insertAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectAdmin">
+      <soap12:operation soapAction="http://tempuri.org/selectAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAdmin">
+      <soap12:operation soapAction="http://tempuri.org/updateAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAdmin">
+      <soap12:operation soapAction="http://tempuri.org/deleteAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllAdmin">
+      <soap12:operation soapAction="http://tempuri.org/sellectAllAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertClient">
+      <soap12:operation soapAction="http://tempuri.org/insertClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectClient">
+      <soap12:operation soapAction="http://tempuri.org/selectClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateClient">
+      <soap12:operation soapAction="http://tempuri.org/updateClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteClient">
+      <soap12:operation soapAction="http://tempuri.org/deleteClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllClient">
+      <soap12:operation soapAction="http://tempuri.org/sellectAllClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_client_details">
+      <soap12:operation soapAction="http://tempuri.org/get_client_details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertMaterial">
+      <soap12:operation soapAction="http://tempuri.org/insertMaterial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectMaterial">
+      <soap12:operation soapAction="http://tempuri.org/selectMaterial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateMaterial">
+      <soap12:operation soapAction="http://tempuri.org/updateMaterial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMaterial">
+      <soap12:operation soapAction="http://tempuri.org/deleteMaterial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sellectAllMaterial">
+      <soap12:operation soapAction="http://tempuri.org/sellectAllMaterial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_all_materials">
+      <soap12:operation soapAction="http://tempuri.org/get_all_materials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertStock">
+      <soap12:operation soapAction="http://tempuri.org/insertStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectStock">
+      <soap12:operation soapAction="http://tempuri.org/selectStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteStock">
+      <soap12:operation soapAction="http://tempuri.org/deleteStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="suber_silk_service">
+    <wsdl:port name="suber_silk_serviceSoap" binding="tns:suber_silk_serviceSoap">
+      <soap:address location="http://localhost:39440/suber_silk_service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="suber_silk_serviceSoap12" binding="tns:suber_silk_serviceSoap12">
+      <soap12:address location="http://localhost:39440/suber_silk_service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
